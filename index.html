@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate Generator-DSC</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Exo+2&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="favicon" href="favicon.ico">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="https://dscjss.in/index.html">
+            <img  src="dsc_linear.png" height="50px" width="="120px>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item  active">
+                <a class="nav-link" href="#" style="border-bottom: 2px solid #007bff;">Certificates <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">HOME</a>
+              </li>
+              
+            </ul>
+          </div>
+    </nav>  
+
+
+    <!-- SECTION -->
+<!-- <section>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+
+                <div class="row" style="margin-top: 70px;"> 
+                    <div class="col-md-6 " style="display: flex; align-items: center; justify-content: center;">
+                        <img src="img/dsc_jss.png" class="img-fluid" alt="" >
+                    </div>
+                    
+            </div>
+        </div>
+    </div>
+</section> -->
+
+
+
+ 
+    
+
+
+    <!-- CONTENT -->
+
+<main>
+        <img src="dsc_jss.png" class="circle">
+        <h4 style="color: grey; font-size: 26px; letter-spacing: 1.5px; font-weight: bold;">Get your Certificates for the latest workshops organized by <span style="color: #007bff;">DSC JSSATEN</span></h4>
+        <label for="name">Type your Name</label>
+        <input required type="text" placeholder="Enter your name" name="Name" id="name" autocomplete="name" minlength="3">
+        <button id="submitBtn">Get your Certificate</button>
+       
+       
+        <!-- <label for="collegeID">College ID:</label>
+        <input required type="text" placeholder="Enter your College ID " name="collegeID" id="collegeID">
+        <label for="num">Contact Number:</label>
+        <input required type="number" placeholder="Enter your Contact Number" name="num" id="num" > -->
+
+    
+        <!-- <h5>Check the validity of your Certificate</h5>
+        <input type="number" id="certID" name="certID"> -->
+        <!-- <button type="submit" value="submit"></button> -->
+
+</main>
+        <!-- </div></div></div> -->
+    
+
+
+        <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+        <script src="https://unpkg.com/@pdf-lib/fontkit@0.0.4"></script>
+        <script src="./fileSaver.js"></script>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <script src="app.js"></script>
+</body>
+</html>
