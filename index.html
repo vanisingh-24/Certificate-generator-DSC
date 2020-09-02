@@ -8,76 +8,85 @@
     <link href="https://fonts.googleapis.com/css?family=Exo+2&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <link rel="favicon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+    <!-- Preloader -->
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div id="loader_page">
+         <img src="img/giphy.gif" alt="" class="img-fluid" width="30%">
+    </div>
+    
+
+
+    <!-- NAVBAR -->
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="overflow-x: hidden; position: fixed; top: 0; width: 100%;">
         <a class="navbar-brand" href="https://dscjss.in/index.html">
-            <img  src="dsc_linear.png" height="50px" width="="120px>
+            <img  src="dsc_linear.png" height="37px" width="380px">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" style="position: inherit; right: 2%;">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item  active">
-                <a class="nav-link" href="#" style="border-bottom: 2px solid #007bff;">Certificates <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="#" style="border-bottom: 2px solid #007bff;">Certificates<span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">HOME</a>
+                <a class="nav-link" href="https://dscjss.in/">Home</a>
               </li>
-              
+              <li class="nav-item">
+                <a class="nav-link" href="https://dscjss.in/workshops.html">Workshops</a>
+              </li>
             </ul>
-          </div>
+         </div>
     </nav>  
 
-
-    <!-- SECTION -->
-<!-- <section>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-6">
-
-                <div class="row" style="margin-top: 70px;"> 
-                    <div class="col-md-6 " style="display: flex; align-items: center; justify-content: center;">
-                        <img src="img/dsc_jss.png" class="img-fluid" alt="" >
-                    </div>
-                    
-            </div>
-        </div>
-    </div>
-</section> -->
-
-
-
- 
     
+
 
 
     <!-- CONTENT -->
 
-<main>
+    <main>
         <img src="dsc_jss.png" class="circle">
         <h4 style="color: grey; font-size: 26px; letter-spacing: 1.5px; font-weight: bold;">Get your Certificates for the latest workshops organized by <span style="color: #007bff;">DSC JSSATEN</span></h4>
         <label for="name">Type your Name</label>
         <input required type="text" placeholder="Enter your name" name="Name" id="name" autocomplete="name" minlength="3">
         <button id="submitBtn">Get your Certificate</button>
-       
-       
-        <!-- <label for="collegeID">College ID:</label>
-        <input required type="text" placeholder="Enter your College ID " name="collegeID" id="collegeID">
-        <label for="num">Contact Number:</label>
-        <input required type="number" placeholder="Enter your Contact Number" name="num" id="num" > -->
-
+    </main>
+      
     
-        <!-- <h5>Check the validity of your Certificate</h5>
-        <input type="number" id="certID" name="certID"> -->
-        <!-- <button type="submit" value="submit"></button> -->
 
-</main>
-        <!-- </div></div></div> -->
+
+    <!-- Footer -->
+
+    <footer style="display: flex; justify-content: center; text-align: center; flex-direction: column;" >
+
+        <div class="getintouch "  style="margin-top: 150px;">
+            <a href="mailto:admin@dscjss.in" class="btn btn-dark">Get in Touch</a>
+        </div>
     
+    
+    
+        <div class="social" style="margin-top: 30px; margin-bottom: 100px;">
+            <a href="https://twitter.com/DSCJSSATEN" target="_blank" style="text-decoration: none; color: grey;"><i class='fa fa-twitter' id="links" style='font-size:36px; '></i></a>
+            <a href="https://www.facebook.com/dscjssnoida/" target="_blank" style="text-decoration: none; color: grey;"><i class='fa fa-facebook-square' id="links" style='font-size:36px; '></i></a>
+            <a href="https://github.com/DSC-JSS-NOIDA" target="_blank" style="text-decoration: none; color: grey;"><i class='fa fa-github' id="links" style='font-size:36px; '></i></a>
+            <a href="https://www.linkedin.com/company/dsc-jssaten/" target="_blank" style="text-decoration: none; color: grey;"><i class="fa fa-linkedin-square" style="font-size:36px" id="links"></i></a>
+            <a href="https://www.instagram.com/dscjssaten/?igshid=9ubqtp1ssqsi" target="_blank" style="text-decoration: none; color: grey;"><i class="fa fa-instagram" style="font-size:36px" id="links" ></i></a>
+        </div>
+    
+    
+    </footer>
+    
+
+
+
 
 
         <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
