@@ -13,17 +13,6 @@
   })(this, function () {
     "use strict";
   
-    /*
-    * FileSaver.js
-    * A saveAs() FileSaver implementation.
-    *
-    * By Eli Grey, http://eligrey.com
-    *
-    * License : https://github.com/eligrey/FileSaver.js/blob/master/LICENSE.md (MIT)
-    * source  : http://purl.eligrey.com/github/FileSaver.js
-    */
-    // The one and only way of getting global scope in all environments
-    // https://stackoverflow.com/q/3277182/1008999
     var _global = typeof window === 'object' && window.window === window ? window : typeof self === 'object' && self.self === self ? self : typeof global === 'object' && global.global === global ? global : void 0;
   
     function bom(blob, opts) {
@@ -34,8 +23,7 @@
         opts = {
           autoBom: !opts
         };
-      } // prepend BOM for UTF-8 XML and text/* types (including HTML)
-      // note: your browser will automatically convert UTF-16 U+FEFF to EF BB BF
+      } 
   
       if (opts.autoBom && /^\s*(?:text\/\S*|application\/xml|\S*\/\S*\+xml)\s*;.*charset\s*=\s*utf-8/i.test(blob.type)) {
         return new Blob([String.fromCharCode(0xFEFF), blob], {
@@ -72,7 +60,7 @@
       } catch (e) {}
   
       return xhr.status >= 200 && xhr.status <= 299;
-    } // `a.click()` doesn't work for all browsers (#465)
+    } 
   
   
     function click(node) {
@@ -83,25 +71,17 @@
         evt.initMouseEvent('click', true, true, window, 0, 0, 0, 80, 20, false, false, false, false, 0, null);
         node.dispatchEvent(evt);
       }
-    } // Detect WebView inside a native macOS app by ruling out all browsers
-    // We just need to check for 'Safari' because all other browsers (besides Firefox) include that too
-    // https://www.whatismybrowser.com/guides/the-latest-user-agent/macos
-  
+    } 
   
     var isMacOSWebView = /Macintosh/.test(navigator.userAgent) && /AppleWebKit/.test(navigator.userAgent) && !/Safari/.test(navigator.userAgent);
-    var saveAs = _global.saveAs || ( // probably in some web worker
+    var saveAs = _global.saveAs || ( 
     typeof window !== 'object' || window !== _global ? function saveAs() {}
-    /* noop */
-    // Use download attribute first if possible (#193 Lumia mobile) unless this is a macOS WebView
     : 'download' in HTMLAnchorElement.prototype && !isMacOSWebView ? function saveAs(blob, name, opts) {
       var URL = _global.URL || _global.webkitURL;
       var a = document.createElement('a');
       name = name || blob.name || 'download';
       a.download = name;
-      a.rel = 'noopener'; // tabnabbing
-      // TODO: detect chrome extensions & packaged apps
-      // a.target = '_blank'
-  
+      a.rel = 'noopener'; 
       if (typeof blob === 'string') {
         // Support regular links
         a.href = blob;
@@ -142,8 +122,7 @@
       }
     } // Fallback to using FileReader and a popup
     : function saveAs(blob, name, opts, popup) {
-      // Open a popup immediately do go around popup blocker
-      // Mostly only available on user interaction and the fileReader is async so...
+  
       popup = popup || open('', '_blank');
   
       if (popup) {
@@ -158,14 +137,14 @@
       var isChromeIOS = /CriOS\/[\d]+/.test(navigator.userAgent);
   
       if ((isChromeIOS || force && isSafari || isMacOSWebView) && typeof FileReader !== 'undefined') {
-        // Safari doesn't allow downloading of blob URLs
+        
         var reader = new FileReader();
   
         reader.onloadend = function () {
           var url = reader.result;
           url = isChromeIOS ? url : url.replace(/^data:[^;]*;/, 'data:attachment/file;');
           if (popup) popup.location.href = url;else location = url;
-          popup = null; // reverse-tabnabbing #460
+          popup = null; 
         };
   
         reader.readAsDataURL(blob);
@@ -173,7 +152,7 @@
         var URL = _global.URL || _global.webkitURL;
         var url = URL.createObjectURL(blob);
         if (popup) popup.location = url;else location.href = url;
-        popup = null; // reverse-tabnabbing #460
+        popup = null; 
   
         setTimeout(function () {
           URL.revokeObjectURL(url);
