@@ -1,6 +1,12 @@
 const userName = document.getElementById("name");
 const submitBtn = document.getElementById("submitBtn");
 
+// var currentTime = new Date();
+// var month = currentTime.getMonth()+1;
+// var day = currentTime.getDate();
+// var year = currentTime.getFullYear();
+// var dateString= month + "/" + day + "/" + year;
+
 
 
 const { PDFDocument, rgb, degrees } = PDFLib;
@@ -32,12 +38,12 @@ const generatePDF = async (name) => {
   pdfDoc.registerFontkit(fontkit);
 
   //get font
-  const fontBytes = await fetch("./OpenSans-Regular.ttf").then((res) =>
+  const fontBytes = await fetch("./DancingScript-Regular.ttf").then((res) =>
     res.arrayBuffer()
   );
 
   // Embed our custom font in the document
-  const OpenSansFont = await pdfDoc.embedFont(fontBytes);
+  const DancingScriptFont = await pdfDoc.embedFont(fontBytes);
 
   // Get the first page of the document
   const pages = pdfDoc.getPages();
@@ -48,22 +54,22 @@ const generatePDF = async (name) => {
     x: 335,
     y: 340,
     size: 26,
-    font: OpenSansFont,
-    color: rgb(0,0,0),
+    font: DancingScriptFont,
+    color: rgb(0.62,0.11,0.21),
   });
   firstPage.drawText("Web Development",{
-    x: 292,
-    y: 280,
+    x: 320,
+    y: 283,
     size: 22,
-    font: OpenSansFont,
-    color: rgb(0,0,0),
+    font : DancingScriptFont,
+    color: rgb(0.62,0.11,0.21),
   });
   firstPage.drawText("September 12, 2020",{
-    x: 290,
+    x: 320,
     y: 225,
     size: 22,
-    font: OpenSansFont,
-    color: rgb(0,0,0),
+    font: DancingScriptFont,
+    color: rgb(0.62,0.11,0.21),
   });
 
   // Serialize the PDFDocument to bytes (a Uint8Array)
