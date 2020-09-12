@@ -23,7 +23,9 @@ submitBtn.addEventListener("click", () => {
 
 const generatePDF = async (name) => {
   const existingPdfBytes = await fetch("./cert1.pdf").then((res) =>
-    res.arrayBuffer()
+    {
+      return res.arrayBuffer()
+    }
   );
 
   // Load a PDFDocument from the existing PDF bytes
@@ -71,4 +73,10 @@ const generatePDF = async (name) => {
 };
 
 // init();
+
+// Preloader code start
+let preloader = document.getElementById("loader_page");
+function fLoad(){
+  preloader.style.display = 'none';
+}
 

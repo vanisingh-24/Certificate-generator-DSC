@@ -8,15 +8,15 @@
     <link href="https://fonts.googleapis.com/css?family=Exo+2&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
+<body onload="fLoad()">
     <!-- Preloader -->
 
     <div id="loader_page">
-         <img src="img/giphy.gif" alt="" class="img-fluid" width="30%">
+         <img src="giphy.gif" alt="" class="img-fluid" width="30%">
     </div>
     
 
@@ -51,6 +51,7 @@
     <!-- CONTENT -->
 
     <main>
+        <a name="start" id="start" class="anchor"></a>
         <img src="dsc_jss.png" class="circle">
         <h4 style="color: grey; font-size: 26px; letter-spacing: 1.5px; font-weight: bold;">Get your Certificates for the latest workshops organized by <span style="color: #007bff;">DSC JSSATEN</span></h4>
         <label for="name">Enter your Name</label>
@@ -77,13 +78,13 @@
 
     <footer style="display: flex; justify-content: center; text-align: center; flex-direction: column;" >
 
-        <div class="getintouch "  style="margin-top: 150px;">
+        <div class="getintouch "  style="margin-top: 15px;">
             <a href="mailto:admin@dscjss.in" class="btn btn-dark">Get in Touch</a>
         </div>
     
     
     
-        <div class="social" style="margin-top: 30px; margin-bottom: 100px;">
+        <div class="social" style="margin-top: 30px; margin-bottom: 15px;">
             <a href="https://twitter.com/DSCJSSATEN" target="_blank" style="text-decoration: none; color: grey;"><i class='fa fa-twitter' id="links" style='font-size:36px; '></i></a>
             <a href="https://www.facebook.com/dscjssnoida/" target="_blank" style="text-decoration: none; color: grey;"><i class='fa fa-facebook-square' id="links" style='font-size:36px; '></i></a>
             <a href="https://github.com/DSC-JSS-NOIDA" target="_blank" style="text-decoration: none; color: grey;"><i class='fa fa-github' id="links" style='font-size:36px; '></i></a>
@@ -99,7 +100,7 @@
 
 
 
-        <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+        <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.js"></script>
         <script src="https://unpkg.com/@pdf-lib/fontkit@0.0.4"></script>
         <script src="./fileSaver.js"></script>
 
