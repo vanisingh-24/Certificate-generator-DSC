@@ -1,8 +1,9 @@
 const userName = document.getElementById("name");
 const submitBtn = document.getElementById("submitBtn");
 
-const { PDFDocument, rgb, degrees } = PDFLib;
 
+
+const { PDFDocument, rgb, degrees } = PDFLib;
 
 const capitalize = (str, lower = false) =>
   (lower ? str.toLowerCase() : str).replace(/(?:^|\s|["'([{])+\S/g, (match) =>
@@ -22,7 +23,7 @@ submitBtn.addEventListener("click", () => {
 });
 
 const generatePDF = async (name) => {
-  const existingPdfBytes = await fetch("./cert1.pdf").then((res) =>
+  const existingPdfBytes = await fetch("./cert3.pdf").then((res) =>
     res.arrayBuffer()
   );
 
@@ -31,12 +32,12 @@ const generatePDF = async (name) => {
   pdfDoc.registerFontkit(fontkit);
 
   //get font
-  const fontBytes = await fetch("./Sanchez-Regular.ttf").then((res) =>
+  const fontBytes = await fetch("./OpenSans-Regular.ttf").then((res) =>
     res.arrayBuffer()
   );
 
   // Embed our custom font in the document
-  const SanChezFont = await pdfDoc.embedFont(fontBytes);
+  const OpenSansFont = await pdfDoc.embedFont(fontBytes);
 
   // Get the first page of the document
   const pages = pdfDoc.getPages();
@@ -44,11 +45,25 @@ const generatePDF = async (name) => {
 
   // Draw a string of text diagonally across the first page
   firstPage.drawText(name, {
-    x: 300,
-    y: 270,
-    size: 58,
-    font: SanChezFont,
-    color: rgb(0.2, 0.84, 0.67),
+    x: 335,
+    y: 340,
+    size: 26,
+    font: OpenSansFont,
+    color: rgb(0,0,0),
+  });
+  firstPage.drawText("Web Development",{
+    x: 292,
+    y: 280,
+    size: 22,
+    font: OpenSansFont,
+    color: rgb(0,0,0),
+  });
+  firstPage.drawText("September 12, 2020",{
+    x: 290,
+    y: 225,
+    size: 22,
+    font: OpenSansFont,
+    color: rgb(0,0,0),
   });
 
   // Serialize the PDFDocument to bytes (a Uint8Array)
@@ -71,4 +86,10 @@ const generatePDF = async (name) => {
 };
 
 // init();
+
+//Preloader code start
+let preloader = document.getElementById("loader_page");
+function fLoad(){
+  preloader.style.display = 'none';
+}
 
