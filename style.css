@@ -15,6 +15,7 @@
     margin: auto;
 }
 
+
 body{
     font-family: system-ui;
     text-align: center;
@@ -105,4 +106,91 @@ input:-webkit-autofill:active {
   transition: background-color 5000s ease-in-out 0s;
   -webkit-text-fill-color: #fff !important;
    }
+}
+
+
+
+/* MOBILE VIEW */
+#menu {
+    display: none;
+    cursor: pointer;
+    opacity: 1;
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 3px;
+  }
+  #menu:hover{
+     opacity: .8;
+     transition: all 0.5s ease;
+     border-color: #17a2b8;
+      }
+  
+  .overlay {
+    height: 100%;
+    width: 0%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #24252a;
+    opacity: 1;
+    overflow-x: hidden;
+    z-index: 9999;
+    transition: all 0.4s ease 0s;
+  }
+  .overlay_clicked{
+    height: 100%;
+    width: 80%;
+    position: fixed;
+    z-index: 9999999;
+    top: 0;
+    left: 0;
+    background-color: #24252a;
+    opacity: 1;
+    overflow-x: hidden;
+    transition: all 0.4s ease-out 0s;
+
+  }
+
+  
+  
+  .overlay__content {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  .overlay a {
+    padding: 15px;
+    font-size: 8vw;
+    display: block;
+    color: #edf0f1;
+    
+    transition: all 0.3s ease 0s;
+  }
+  
+  .overlay a:hover {
+    text-decoration: none;
+    color: #0088a9;
+  }
+
+
+  @media (max-height: 450px) {
+    .overlay a {
+      font-size: 20px;
+    }
+    .overlay .close {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+    }
+  }
+
+
+  @media  (max-width: 990px) {
+    #menu {
+      display: block;
+    }
 }
