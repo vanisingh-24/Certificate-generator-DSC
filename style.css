@@ -38,6 +38,7 @@ h4{
 .circle{
     border-radius: 150%;
     height: 120px;
+    margin-top: -60px;
 }
 
 main{
@@ -51,13 +52,13 @@ main{
     padding-top: 60px;
 }
 
-.anchor{
-    position: absolute;
-    margin: -4em;
-}
-
 main *{
     margin-bottom: 12px;
+}
+
+.anchor{
+  position: absolute;
+  margin: -4em;
 }
 
 input{
@@ -168,7 +169,6 @@ input:-webkit-autofill:active {
     justify-content: center;
 }
   
-  
 .overlay a {
     padding: 15px;
     font-size: 8vw;
@@ -209,7 +209,6 @@ input:-webkit-autofill:active {
     font-size: 4.62vw;
   }
 }
-
 
 @media  (max-width: 990px) {
     #menu {
