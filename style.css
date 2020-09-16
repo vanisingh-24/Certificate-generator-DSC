@@ -15,6 +15,13 @@
     margin: auto;
 }
 
+.logo2{
+    cursor: pointer;
+}
+.logo1{
+    display: none;
+}
+
 
 body{
     font-family: system-ui;
@@ -118,14 +125,15 @@ input:-webkit-autofill:active {
     border: 1px solid black;
     padding: 5px;
     border-radius: 3px;
-  }
-  #menu:hover{
+}
+
+#menu:hover{
      opacity: .8;
      transition: all 0.5s ease;
      border-color: #17a2b8;
-      }
+}
   
-  .overlay {
+.overlay {
     height: 100%;
     width: 0%;
     position: fixed;
@@ -136,8 +144,9 @@ input:-webkit-autofill:active {
     overflow-x: hidden;
     z-index: 9999;
     transition: all 0.4s ease 0s;
-  }
-  .overlay_clicked{
+}
+
+.overlay_clicked{
     height: 100%;
     width: 80%;
     position: fixed;
@@ -148,36 +157,34 @@ input:-webkit-autofill:active {
     opacity: 1;
     overflow-x: hidden;
     transition: all 0.4s ease-out 0s;
-
-  }
+}
 
   
-  
-  .overlay__content {
+.overlay__content {
     display: flex;
     height: 100%;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-  }
+}
   
   
-  .overlay a {
+.overlay a {
     padding: 15px;
     font-size: 8vw;
     display: block;
     color: #edf0f1;
-    
     transition: all 0.3s ease 0s;
-  }
+}
   
-  .overlay a:hover {
+.overlay a:hover {
     text-decoration: none;
     color: #0088a9;
-  }
+}
 
 
-  @media (max-height: 450px) {
+/* MEDIA QUERIES */
+@media (max-height: 450px) {
     .overlay a {
       font-size: 20px;
     }
@@ -186,11 +193,30 @@ input:-webkit-autofill:active {
       top: 15px;
       right: 35px;
     }
+}
+
+@media (max-width:500px){
+  .logo2{
+    display: none;
   }
+  .logo1{
+   display: block;
+  }
+}
+
+@media(min-width:565px){
+  .overlay a{
+    font-size: 4.62vw;
+  }
+}
 
 
-  @media  (max-width: 990px) {
+@media  (max-width: 990px) {
     #menu {
       display: block;
     }
 }
+
+
+
+
